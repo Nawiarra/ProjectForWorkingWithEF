@@ -22,11 +22,19 @@ namespace ProjectForWorkingWithEF
                 FurnitureTypeId = 1,
                 Color = "Blue",
                 WoodTypeId = 3,
+
                 FurnitureType = new FurnitureTypePostModel
                 {
                     Name = "Chair",
                     Size = "50x40x45",
                     Varnish = true
+                },
+
+                WoodType = new WoodTypePostModel
+                {
+                    TypeName = "Acacia",
+                    BoardThickness = 10,
+                    Price = "50"
                 }
 
             };
@@ -43,7 +51,21 @@ namespace ProjectForWorkingWithEF
                 Date = DateTime.UtcNow.ToString("dd.MM.yyyy"),
                 FurnitureTypeId = 1,
                 Color = "Blue",
-                WoodTypeId = 2
+                WoodTypeId = 2,
+
+                FurnitureType = new FurnitureTypePostModel
+                {
+                    Name = "Chair",
+                    Size = "50x40x45",
+                    Varnish = true
+                },
+
+                WoodType = new WoodTypePostModel
+                {
+                    TypeName = "Acacia",
+                    BoardThickness = 10,
+                    Price = "50"
+                }
             };
 
             controller.CreateWoodFurnitureRequest(model2);

@@ -23,6 +23,8 @@ namespace WoodWorkshop.Controllers
                 cfg.CreateMap<WoodFurnitureModel, WoodFurnitureViewModel> ();
                 cfg.CreateMap<FurnitureTypePostModel, FurnitureTypeModel>().ReverseMap();
                 cfg.CreateMap<FurnitureTypeViewModel, FurnitureTypeModel>().ReverseMap();
+                cfg.CreateMap<WoodTypePostModel, WoodTypeModel>().ReverseMap();
+                cfg.CreateMap<WoodTypeViewModel, WoodTypeModel>().ReverseMap();
             });
 
             _mapper = new Mapper(mapperConfig);

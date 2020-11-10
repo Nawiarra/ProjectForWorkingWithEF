@@ -4,14 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WoodWorkshop.Domain.Models
+namespace WoodWorkshop.Models.PostModels
 {
-    public class WoodTypeModel
+    public class WoodTypePostModel
     {
-        public int Id { get; set; }
         public string TypeName { get; set; }
         public float BoardThickness { get; set; }
         public string Price { get; set; }
-        public virtual ICollection <WoodFurnitureModel> WoodFurnitures { get; set; }
+        public virtual ICollection<CreateWoodFurniturePostModel> WoodFurnitures { get; set; }
     }
 }

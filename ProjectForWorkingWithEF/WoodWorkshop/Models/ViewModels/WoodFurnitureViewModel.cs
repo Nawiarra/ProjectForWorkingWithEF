@@ -18,5 +18,6 @@ namespace WoodWorkshop.Models.ViewModels
         public int WoodTypeId { get; set; }
 
         public virtual FurnitureTypeViewModel FurnitureType { get; set; }
+        public virtual WoodTypeViewModel WoodType { get; set; }
     }
 }

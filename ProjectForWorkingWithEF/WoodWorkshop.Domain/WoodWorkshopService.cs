@@ -26,6 +26,7 @@ namespace WoodWorkshop.Domain
             {
                 cfg.CreateMap<WoodFurnitureModel, WoodFurniture>().ReverseMap();
                 cfg.CreateMap<FurnitureTypeModel, FurnitureType>().ReverseMap();
+                cfg.CreateMap<WoodTypeModel, WoodType>().ReverseMap();
             });
 
             _mapper = new Mapper(mapperConfig);
@@ -48,7 +49,7 @@ namespace WoodWorkshop.Domain
                         throw new System.Exception("Users can't buy more than 5 item's in the same day ");
                 }
             }
-            catch(Exception ex)
+            catch
             {
 
             }

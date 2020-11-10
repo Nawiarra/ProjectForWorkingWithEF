@@ -48,6 +48,8 @@ namespace WoodWorkshop.Data.Repositories
             entity.Color = model.Color;
             entity.FurnitureType = model.FurnitureType;
             entity.FurnitureTypeId = model.FurnitureTypeId;
+            entity.WoodTypeId = model.WoodTypeId;
+            entity.WoodType = model.WoodType;
 
             _ctx.SaveChanges();
 
