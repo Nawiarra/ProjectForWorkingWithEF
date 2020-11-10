@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\WoodFurnitureModel.cs" />
+    <Compile Include="Models\WoodTypeModel.cs" />
     <Compile Include="WoodWorkshopService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

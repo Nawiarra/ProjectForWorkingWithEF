@@ -12,8 +12,10 @@ namespace WoodWorkshop.Data.Models
         public string PhoneNumber { get; set; }
         public string FullName { get; set; }
         public string Date { get; set; }
-        public string FurnitureType { get; set; }
+        public int FurnitureTypeId { get; set; }
         public string Color { get; set; }
-        public string WoodType { get; set; }
+        public int WoodTypeId { get; set; }
+
+        public virtual WoodType WoodType { get; set; }
     }
 }
