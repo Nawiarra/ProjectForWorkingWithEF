@@ -19,6 +19,6 @@ namespace WoodWorkshop.Data
 
         }
 
-        DbSet <WoodFurniture> WoodPiecesOfFurniture { get; set; }
+        public DbSet <WoodFurniture> WoodPiecesOfFurniture { get; set; }
     }
 }
