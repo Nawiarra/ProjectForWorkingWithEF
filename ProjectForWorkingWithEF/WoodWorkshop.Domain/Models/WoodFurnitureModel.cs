@@ -16,5 +16,7 @@ namespace WoodWorkshop.Domain.Models
         public int FurnitureTypeId { get; set; }
         public string Color { get; set; }
         public int WoodTypeId { get; set; }
+
+        public virtual FurnitureTypeModel FurnitureType { get; set; }
     }
 }

@@ -19,8 +19,10 @@ namespace WoodWorkshop.Controllers
 
             var mapperConfig = new MapperConfiguration(cfg =>
             {
-                var map = cfg.CreateMap<CreateWoodFurniturePostModel, WoodFurnitureModel>();
-                var map2 = cfg.CreateMap<WoodFurnitureModel, WoodFurnitureViewModel> ();
+                cfg.CreateMap<CreateWoodFurniturePostModel, WoodFurnitureModel>();
+                cfg.CreateMap<WoodFurnitureModel, WoodFurnitureViewModel> ();
+                cfg.CreateMap<FurnitureTypePostModel, FurnitureTypeModel>().ReverseMap();
+                cfg.CreateMap<FurnitureTypeViewModel, FurnitureTypeModel>().ReverseMap();
             });
 
             _mapper = new Mapper(mapperConfig);
@@ -32,8 +34,6 @@ namespace WoodWorkshop.Controllers
                 throw new System.Exception("Invalid FullName");
             if (model.PhoneNumber.Length != 13)
                 throw new System.Exception("Invalid Phone Number");
-            if (model.FurnitureType.Length == 0)
-                throw new System.Exception("Invalid Furniture Type");
 
             var woodFurnitureModel = _mapper.Map<WoodFurnitureModel>(model);
 

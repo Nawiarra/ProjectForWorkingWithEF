@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WoodWorkshop.Data.Models
 {
-    public class WoodType
+    public class FurnitureType
     {
         public int Id { get; set; }
         public string Name { get; set; }

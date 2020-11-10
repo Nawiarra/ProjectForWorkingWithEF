@@ -19,9 +19,16 @@ namespace ProjectForWorkingWithEF
                 FullName = "Petr Petrov",
                 PhoneNumber = "+380951111133",
                 Date = DateTime.UtcNow.ToString("dd.MM.yyyy"),
-                FurnitureType = "Chair",
+                FurnitureTypeId = 1,
                 Color = "Blue",
-                WoodType = "Oak"
+                WoodTypeId = 3,
+                FurnitureType = new FurnitureTypePostModel
+                {
+                    Name = "Chair",
+                    Size = "50x40x45",
+                    Varnish = true
+                }
+
             };
 
             controller.CreateWoodFurnitureRequest(model);
@@ -34,9 +41,9 @@ namespace ProjectForWorkingWithEF
                 FullName = "Petr Petrov",
                 PhoneNumber = "+380951111166",
                 Date = DateTime.UtcNow.ToString("dd.MM.yyyy"),
-                FurnitureType = "Chair",
+                FurnitureTypeId = 1,
                 Color = "Blue",
-                WoodType = "Oak"
+                WoodTypeId = 2
             };
 
             controller.CreateWoodFurnitureRequest(model2);

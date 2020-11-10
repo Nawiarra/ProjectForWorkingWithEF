@@ -15,5 +15,7 @@ namespace WoodWorkshop.Models.PostModels
         public int FurnitureTypeId { get; set; }
         public string Color { get; set; }
         public int WoodTypeId { get; set; }
+
+        public virtual FurnitureTypePostModel FurnitureType { get; set; }
     }
 }

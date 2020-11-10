@@ -51,7 +51,9 @@
   <ItemGroup>
     <Compile Include="Controllers\WoodFurnitureController.cs" />
     <Compile Include="Models\PostModels\CreateWoodFurniturePostModel.cs" />
+    <Compile Include="Models\PostModels\FurnitureTypePostModel.cs" />
     <Compile Include="Models\ViewModels\WoodFurnitureViewModel.cs" />
+    <Compile Include="Models\ViewModels\FurnitureTypeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

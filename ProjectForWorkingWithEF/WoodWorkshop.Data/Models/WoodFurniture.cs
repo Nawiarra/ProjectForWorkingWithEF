@@ -16,6 +16,6 @@ namespace WoodWorkshop.Data.Models
         public string Color { get; set; }
         public int WoodTypeId { get; set; }
 
-        public virtual WoodType WoodType { get; set; }
+        public virtual FurnitureType FurnitureType { get; set; }
     }
 }
