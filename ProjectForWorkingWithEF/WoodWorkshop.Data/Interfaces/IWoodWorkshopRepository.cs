@@ -9,8 +9,9 @@ namespace WoodWorkshop.Data.Interfaces
 {
     public interface IWoodWorkshopRepository
     {
-        WoodFurniture Create(WoodFurniture model);
-        List<WoodFurniture> GetAll();
-        WoodFurniture GetItemById(int id);
+        WoodFurnitureOrder Create(WoodFurnitureOrder model);
+        List<WoodFurnitureOrder> GetAll();
+        WoodFurnitureOrder GetItemById(int id);
+        List<WoodFurnitureOrder> GetItemsByName(string name);
     }
 }

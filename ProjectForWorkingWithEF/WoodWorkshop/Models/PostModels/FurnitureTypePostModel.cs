@@ -11,6 +11,6 @@ namespace WoodWorkshop.Models.PostModels
         public string Name { get; set; }
         public string Size { get; set; }
         public bool Varnish { get; set; }
-        public virtual ICollection<CreateWoodFurniturePostModel> WoodFurnitures { get; set; }
+        public virtual ICollection<CreateWoodFurnitureOrderPostModel> WoodFurnitureOrders { get; set; }
     }
 }

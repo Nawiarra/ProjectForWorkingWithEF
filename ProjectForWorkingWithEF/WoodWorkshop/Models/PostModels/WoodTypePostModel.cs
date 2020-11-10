@@ -11,6 +11,6 @@ namespace WoodWorkshop.Models.PostModels
         public string TypeName { get; set; }
         public float BoardThickness { get; set; }
         public string Price { get; set; }
-        public virtual ICollection<CreateWoodFurniturePostModel> WoodFurnitures { get; set; }
+        public virtual ICollection<CreateWoodFurnitureOrderPostModel> WoodFurnitureOrders { get; set; }
     }
 }

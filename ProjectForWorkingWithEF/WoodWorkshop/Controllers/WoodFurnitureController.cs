@@ -19,8 +19,8 @@ namespace WoodWorkshop.Controllers
 
             var mapperConfig = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<CreateWoodFurniturePostModel, WoodFurnitureModel>();
-                cfg.CreateMap<WoodFurnitureModel, WoodFurnitureViewModel> ();
+                cfg.CreateMap<CreateWoodFurnitureOrderPostModel, WoodFurnitureOrderModel>();
+                cfg.CreateMap<WoodFurnitureOrderModel, WoodFurnitureOrderViewModel> ();
                 cfg.CreateMap<FurnitureTypePostModel, FurnitureTypeModel>().ReverseMap();
                 cfg.CreateMap<FurnitureTypeViewModel, FurnitureTypeModel>().ReverseMap();
                 cfg.CreateMap<WoodTypePostModel, WoodTypeModel>().ReverseMap();
@@ -30,30 +30,30 @@ namespace WoodWorkshop.Controllers
             _mapper = new Mapper(mapperConfig);
         }
 
-        public void CreateWoodFurnitureRequest(CreateWoodFurniturePostModel model)
+        public void CreateWoodFurnitureRequest(CreateWoodFurnitureOrderPostModel model)
         {
             if (string.IsNullOrWhiteSpace(model.FullName))
                 throw new System.Exception("Invalid FullName");
             if (model.PhoneNumber.Length != 13)
                 throw new System.Exception("Invalid Phone Number");
 
-            var woodFurnitureModel = _mapper.Map<WoodFurnitureModel>(model);
+            var woodFurnitureModel = _mapper.Map<WoodFurnitureOrderModel>(model);
 
             _woodWorkshopService.CreateFurnitureRequest(woodFurnitureModel);
         }
 
-        public WoodFurnitureViewModel GetItemById(int id)
+        public WoodFurnitureOrderViewModel GetItemById(int id)
         {
             var woodFurnitureModel = _woodWorkshopService.GetItemById(id);
 
-            return _mapper.Map<WoodFurnitureViewModel>(woodFurnitureModel);
+            return _mapper.Map<WoodFurnitureOrderViewModel>(woodFurnitureModel);
         }
 
-        public List <WoodFurnitureViewModel> GetAll()
+        public List <WoodFurnitureOrderViewModel> GetAll()
         {
             var resultItems = _woodWorkshopService.GetAll() ;
 
-            return _mapper.Map<List<WoodFurnitureViewModel>>(resultItems);
+            return _mapper.Map<List<WoodFurnitureOrderViewModel>>(resultItems);
         }
 
     }

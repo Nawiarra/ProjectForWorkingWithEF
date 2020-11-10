@@ -19,7 +19,7 @@ namespace WoodWorkshop.Data.Repositories
         {
             _ctx = new WoodWorkshopContext();
         }
-        public WoodFurniture Create(WoodFurniture model)
+        public WoodFurnitureOrder Create(WoodFurnitureOrder model)
         {
             _ctx.WoodPiecesOfFurniture.Add(model);
 
@@ -28,17 +28,23 @@ namespace WoodWorkshop.Data.Repositories
             return model;
         }
 
-        public List<WoodFurniture> GetAll()
+        public List<WoodFurnitureOrder> GetAll()
         {
             return _ctx.WoodPiecesOfFurniture.ToList();
         }
 
-        public WoodFurniture GetItemById(int id)
+        public WoodFurnitureOrder GetItemById(int id)
         {
             return _ctx.WoodPiecesOfFurniture.FirstOrDefault(x => x.Id == id);
         }
 
-        public WoodFurniture UpdateItem(WoodFurniture model)
+        public List<WoodFurnitureOrder> GetItemsByName(string name)
+        {
+            return _ctx.WoodPiecesOfFurniture.Where(x => x.FullName == name).ToList();
+        }
+
+
+        public WoodFurnitureOrder UpdateItem(WoodFurnitureOrder model)
         {
             var entity = GetItemById(model.Id);
             entity.Id = model.Id;
@@ -56,7 +62,7 @@ namespace WoodWorkshop.Data.Repositories
             return model;
         }
 
-        public bool DeleteItem(WoodFurniture model)
+        public bool DeleteItem(WoodFurnitureOrder model)
         {
             try
             {

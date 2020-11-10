@@ -12,6 +12,6 @@ namespace WoodWorkshop.Models.ViewModels
         public string Name { get; set; }
         public string Size { get; set; }
         public bool Varnish { get; set; }
-        public virtual ICollection<WoodFurnitureViewModel> WoodFurnitures { get; set; }
+        public virtual ICollection<WoodFurnitureOrderViewModel> WoodFurnitureOrders { get; set; }
     }
 }

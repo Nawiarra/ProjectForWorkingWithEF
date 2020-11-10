@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WoodWorkshop.Data.Models
+namespace WoodWorkshop.Models.ViewModels
 {
-    public class WoodFurniture
+    public class WoodFurnitureOrderViewModel
     {
+
         public int Id { get; set; }
         public string PhoneNumber { get; set; }
         public string FullName { get; set; }
@@ -16,7 +17,7 @@ namespace WoodWorkshop.Data.Models
         public string Color { get; set; }
         public int WoodTypeId { get; set; }
 
-        public virtual FurnitureType FurnitureType { get; set; }
-        public virtual WoodType WoodType { get; set; }
+        public virtual FurnitureTypeViewModel FurnitureType { get; set; }
+        public virtual WoodTypeViewModel WoodType { get; set; }
     }
 }

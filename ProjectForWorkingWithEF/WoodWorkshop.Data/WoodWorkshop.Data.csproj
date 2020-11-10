@@ -60,7 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IWoodWorkshopRepository.cs" />
-    <Compile Include="Models\WoodFurniture.cs" />
+    <Compile Include="Models\WoodFurnitureOrder.cs" />
     <Compile Include="Models\FurnitureType.cs" />
     <Compile Include="Models\WoodType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -12,6 +12,6 @@ namespace WoodWorkshop.Domain.Models
             public string Name { get; set; }
             public string Size { get; set; }
             public bool Varnish { get; set; }
-            public virtual ICollection<WoodFurnitureModel> WoodFurnitures { get; set; }
+            public virtual ICollection<WoodFurnitureOrderModel> WoodFurnitureOrders { get; set; }
     }
 }

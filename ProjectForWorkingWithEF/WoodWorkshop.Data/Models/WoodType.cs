@@ -12,6 +12,6 @@ namespace WoodWorkshop.Data.Models
         public string TypeName { get; set; }
         public float BoardThickness { get; set; }
         public string Price { get; set; }
-        public virtual ICollection<WoodFurniture> WoodFurnitures { get; set; }
+        public virtual ICollection<WoodFurnitureOrder> WoodFurnitureOrders { get; set; }
     }
 }

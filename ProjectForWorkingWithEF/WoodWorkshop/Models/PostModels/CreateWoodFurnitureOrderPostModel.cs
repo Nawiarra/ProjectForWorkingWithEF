@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WoodWorkshop.Models.PostModels
 {
-    public class CreateWoodFurniturePostModel
+    public class CreateWoodFurnitureOrderPostModel
     {
         public string PhoneNumber { get; set; }
         public string FullName { get; set; }
