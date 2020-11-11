@@ -36,7 +36,8 @@ namespace WoodWorkshop.Domain
         {
 
             var ListOfAllItems = _woodWorkshopRepository.GetItemsByName(model.FullName);
-            try
+
+            if (ListOfAllItems != null)
             {
                 ListOfAllItems = ListOfAllItems.Where(x => x.FullName == model.FullName).ToList();
 
@@ -47,10 +48,6 @@ namespace WoodWorkshop.Domain
                     if (list.Count() > 5)
                         throw new System.Exception("Users can't buy more than 5 item's in the same day ");
                 }
-            }
-            catch
-            {
-
             }
 
             var woodFurniture = _mapper.Map<WoodFurnitureOrder>(model);
