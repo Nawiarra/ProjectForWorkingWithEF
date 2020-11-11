@@ -50,7 +50,7 @@ namespace WoodWorkshop.Controllers
 
         public WoodFurnitureOrderViewModel GetItemById(int id)
         {
-            var woodFurnitureModel = _woodWorkshopService.GetItemById(id);
+            var woodFurnitureModel = _woodWorkshopService.GetById(id);
 
             return _mapper.Map<WoodFurnitureOrderViewModel>(woodFurnitureModel);
         }

@@ -89,12 +89,12 @@ namespace WoodWorkshop.Domain
 
         }
 
-        public WoodFurnitureOrderModel GetItemById(int id)
+        public WoodFurnitureOrderModel GetById(int id)
         {
             var customers = _customerRepository.GetById(id);
      
 
-            var woodFurniture = _woodWorkshopRepository.GetItemById(id);
+            var woodFurniture = _woodWorkshopRepository.GetById(id);
 
             return _mapper.Map<WoodFurnitureOrderModel>(woodFurniture);
         }

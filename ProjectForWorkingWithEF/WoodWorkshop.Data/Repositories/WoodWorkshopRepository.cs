@@ -33,21 +33,16 @@ namespace WoodWorkshop.Data.Repositories
             return _ctx.WoodFurnitureOrders.ToList();
         }
 
-        public WoodFurnitureOrder GetItemById(int id)
+        public WoodFurnitureOrder GetById(int id)
         {
             return _ctx.WoodFurnitureOrders.FirstOrDefault(x => x.Id == id);
         }
 
-        List<WoodFurnitureOrder> GetAllById(int id)
-        {
-            return _ctx.WoodFurnitureOrders
-                .Where(x => x.Id == id)
-                .ToList();
-        }
+
 
         public WoodFurnitureOrder UpdateItem(WoodFurnitureOrder model)
         {
-            var entity = GetItemById(model.Id);
+            var entity = GetById(model.Id);
             entity.Id = model.Id;
             entity.CustomerId = model.CustomerId;
             entity.Customer = model.Customer;
@@ -67,7 +62,7 @@ namespace WoodWorkshop.Data.Repositories
         {
             try
             {
-                var entity = GetItemById(model.Id);
+                var entity = GetById(model.Id);
 
                 _ctx.WoodFurnitureOrders.Remove(entity);
                 _ctx.SaveChanges();
@@ -78,6 +73,14 @@ namespace WoodWorkshop.Data.Repositories
             }
 
             return true;
+        }
+
+        public List<WoodFurnitureOrder> GetAllById(int id)
+        {
+                return _ctx.WoodFurnitureOrders
+                    .Where(x => x.Id == id)
+                    .ToList();
+
         }
     }
 }
