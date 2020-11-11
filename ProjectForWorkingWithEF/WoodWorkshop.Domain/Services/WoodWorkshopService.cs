@@ -15,11 +15,13 @@ namespace WoodWorkshop.Domain
     public class WoodWorkshopService
     {
         private readonly IWoodWorkshopRepository _woodWorkshopRepository;
+        private readonly CustomerRepository _customerRepository;
         private readonly IMapper _mapper;
 
         public WoodWorkshopService()
         {
             _woodWorkshopRepository = new WoodWorkshopRepository();
+            _customerRepository = new CustomerRepository();
 
 
             var mapperConfig = new MapperConfiguration(cfg =>
@@ -36,11 +38,11 @@ namespace WoodWorkshop.Domain
         public void CreateFurnitureRequest(WoodFurnitureOrderModel model)
         {
 
-            var ListOfAllItems = _woodWorkshopRepository.GetItemsCustomerId(model.CustomerId);
+            var customer = _customerRepository.GetById(model.CustomerId);
 
-            if (ListOfAllItems != null)
+            if (customer != null)
             {
-                var ListsOfEqualsUserFurniture = ListOfAllItems.GroupBy(x => x.Date);
+                var ListsOfEqualsUserFurniture = _woodWorkshopRepository.GetItemsByCustomerAndGroupByDate(customer);
 
                 foreach (var list in ListsOfEqualsUserFurniture)
                 {
@@ -57,6 +59,9 @@ namespace WoodWorkshop.Domain
 
         public WoodFurnitureOrderModel GetItemById(int id)
         {
+            var customers = _customerRepository.GetById(id);
+     
+
             var woodFurniture = _woodWorkshopRepository.GetItemById(id);
 
             return _mapper.Map<WoodFurnitureOrderModel>(woodFurniture);
