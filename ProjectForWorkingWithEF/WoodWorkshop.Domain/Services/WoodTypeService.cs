@@ -29,7 +29,7 @@ namespace WoodWorkshop.Domain.Services
             _mapper = new Mapper(mapperConfig);
         }
 
-        public void CreateFurnitureRequest(WoodType model)
+        public void CreateFurnitureRequest(WoodTypeModel model)
         {
 
             var existedWoodType = _woodTypeRepository.GetByName(model.TypeName);

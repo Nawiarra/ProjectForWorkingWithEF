@@ -49,7 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\WoodFurnitureController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\FurnitureTypeController.cs" />
+    <Compile Include="Controllers\WoodFurnitureOrderController.cs" />
+    <Compile Include="Controllers\WoodTypeController.cs" />
     <Compile Include="Models\PostModels\CreateWoodFurnitureOrderPostModel.cs" />
     <Compile Include="Models\PostModels\CustomerPostModel.cs" />
     <Compile Include="Models\PostModels\FurnitureTypePostModel.cs" />
