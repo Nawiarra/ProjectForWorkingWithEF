@@ -16,8 +16,6 @@ namespace ProjectForWorkingWithEF
 
             var model = new CreateWoodFurnitureOrderPostModel
             {
-                FullName = "Petr Petrov",
-                PhoneNumber = "+380951111133",
                 Date = DateTime.UtcNow.ToString("dd.MM.yyyy"),
                 FurnitureTypeId = 1,
                 Color = "Blue",
@@ -35,6 +33,11 @@ namespace ProjectForWorkingWithEF
                     TypeName = "Acacia",
                     BoardThickness = 10,
                     Price = "50"
+                },
+                Customer = new CustomerPostModel
+                {
+                    FullName = "Petr Petrov",
+                    PhoneNumber = "+380951111166"
                 }
 
             };
@@ -46,8 +49,7 @@ namespace ProjectForWorkingWithEF
 
             var model2 = new CreateWoodFurnitureOrderPostModel
             {
-                FullName = "Petr Petrov",
-                PhoneNumber = "+380951111166",
+
                 Date = DateTime.UtcNow.ToString("dd.MM.yyyy"),
                 FurnitureTypeId = 1,
                 Color = "Blue",
@@ -65,7 +67,14 @@ namespace ProjectForWorkingWithEF
                     TypeName = "Acacia",
                     BoardThickness = 10,
                     Price = "50"
+                },
+
+                Customer = new CustomerPostModel
+                {
+                    FullName = "Petr Petrov",
+                    PhoneNumber = "+380951111166"
                 }
+
             };
 
             controller.CreateWoodFurnitureRequest(model2);

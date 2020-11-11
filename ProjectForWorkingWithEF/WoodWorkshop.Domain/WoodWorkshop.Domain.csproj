@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\CustomerModel.cs" />
     <Compile Include="Models\WoodFurnitureOrderModel.cs" />
     <Compile Include="Models\FurnitureTypeModel.cs" />
     <Compile Include="Models\WoodTypeModel.cs" />

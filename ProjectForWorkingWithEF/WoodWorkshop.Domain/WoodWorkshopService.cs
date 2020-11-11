@@ -27,6 +27,7 @@ namespace WoodWorkshop.Domain
                 cfg.CreateMap<WoodFurnitureOrderModel, WoodFurnitureOrder>().ReverseMap();
                 cfg.CreateMap<FurnitureTypeModel, FurnitureType>().ReverseMap();
                 cfg.CreateMap<WoodTypeModel, WoodType>().ReverseMap();
+                cfg.CreateMap<CustomerModel, Customer>().ReverseMap();
             });
 
             _mapper = new Mapper(mapperConfig);
@@ -35,12 +36,10 @@ namespace WoodWorkshop.Domain
         public void CreateFurnitureRequest(WoodFurnitureOrderModel model)
         {
 
-            var ListOfAllItems = _woodWorkshopRepository.GetItemsByName(model.FullName);
+            var ListOfAllItems = _woodWorkshopRepository.GetItemsCustomerId(model.CustomerId);
 
             if (ListOfAllItems != null)
             {
-                ListOfAllItems = ListOfAllItems.Where(x => x.FullName == model.FullName).ToList();
-
                 var ListsOfEqualsUserFurniture = ListOfAllItems.GroupBy(x => x.Date);
 
                 foreach (var list in ListsOfEqualsUserFurniture)

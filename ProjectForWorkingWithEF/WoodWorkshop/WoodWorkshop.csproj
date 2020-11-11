@@ -51,8 +51,10 @@
   <ItemGroup>
     <Compile Include="Controllers\WoodFurnitureController.cs" />
     <Compile Include="Models\PostModels\CreateWoodFurnitureOrderPostModel.cs" />
+    <Compile Include="Models\PostModels\CustomerPostModel.cs" />
     <Compile Include="Models\PostModels\FurnitureTypePostModel.cs" />
     <Compile Include="Models\PostModels\WoodTypePostModel.cs" />
+    <Compile Include="Models\ViewModels\CustomerViewModel.cs" />
     <Compile Include="Models\ViewModels\WoodFurnitureOrderViewModel.cs" />
     <Compile Include="Models\ViewModels\FurnitureTypeViewModel.cs" />
     <Compile Include="Models\ViewModels\WoodTypeViewModel.cs" />

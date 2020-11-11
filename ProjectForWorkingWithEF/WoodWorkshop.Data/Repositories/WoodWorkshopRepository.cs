@@ -38,9 +38,9 @@ namespace WoodWorkshop.Data.Repositories
             return _ctx.WoodFurnitureOrders.FirstOrDefault(x => x.Id == id);
         }
 
-        public List<WoodFurnitureOrder> GetItemsByName(string name)
+        public List<WoodFurnitureOrder> GetItemsCustomerId(int id)
         {
-            return _ctx.WoodFurnitureOrders.Where(x => x.FullName == name).ToList();
+            return _ctx.WoodFurnitureOrders.Where(x => x.CustomerId == id).ToList();
         }
 
 
@@ -48,8 +48,8 @@ namespace WoodWorkshop.Data.Repositories
         {
             var entity = GetItemById(model.Id);
             entity.Id = model.Id;
-            entity.FullName = model.FullName;
-            entity.PhoneNumber = model.PhoneNumber;
+            entity.CustomerId = model.CustomerId;
+            entity.Customer = model.Customer;
             entity.Date = model.Date;
             entity.Color = model.Color;
             entity.FurnitureType = model.FurnitureType;

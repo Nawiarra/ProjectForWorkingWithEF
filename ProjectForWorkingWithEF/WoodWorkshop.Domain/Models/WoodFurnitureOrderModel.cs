@@ -10,8 +10,7 @@ namespace WoodWorkshop.Domain.Models
     public class WoodFurnitureOrderModel
     {
         public int Id { get; set; }
-        public string PhoneNumber { get; set; }
-        public string FullName { get; set; }
+        public int CustomerId { get; set; }
         public string Date { get; set; }
         public int FurnitureTypeId { get; set; }
         public string Color { get; set; }
@@ -19,6 +18,7 @@ namespace WoodWorkshop.Domain.Models
 
         public virtual FurnitureTypeModel FurnitureType { get; set; }
         public virtual WoodTypeModel WoodType { get; set; }
+        public virtual CustomerModel Customer { get; set; }
 
     }
 }

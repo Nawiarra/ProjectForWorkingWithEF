@@ -25,6 +25,9 @@ namespace WoodWorkshop.Controllers
                 cfg.CreateMap<FurnitureTypeViewModel, FurnitureTypeModel>().ReverseMap();
                 cfg.CreateMap<WoodTypePostModel, WoodTypeModel>().ReverseMap();
                 cfg.CreateMap<WoodTypeViewModel, WoodTypeModel>().ReverseMap();
+                cfg.CreateMap<CustomerPostModel, CustomerModel>().ReverseMap();
+                cfg.CreateMap<CustomerViewModel, CustomerModel>().ReverseMap();
+
             });
 
             _mapper = new Mapper(mapperConfig);
@@ -32,9 +35,9 @@ namespace WoodWorkshop.Controllers
 
         public void CreateWoodFurnitureRequest(CreateWoodFurnitureOrderPostModel model)
         {
-            if (string.IsNullOrWhiteSpace(model.FullName))
+            if (string.IsNullOrWhiteSpace(model.Customer.FullName))
                 throw new System.Exception("Invalid FullName");
-            if (model.PhoneNumber.Length != 13)
+            if (model.Customer.PhoneNumber.Length != 13)
                 throw new System.Exception("Invalid Phone Number");
 
             var woodFurnitureModel = _mapper.Map<WoodFurnitureOrderModel>(model);
