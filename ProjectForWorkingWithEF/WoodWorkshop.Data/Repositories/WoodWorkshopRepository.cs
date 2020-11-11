@@ -78,7 +78,7 @@ namespace WoodWorkshop.Data.Repositories
         public List<WoodFurnitureOrder> GetAllByCustomerId(int id)
         {
                 return _ctx.WoodFurnitureOrders
-                    .Where(x => x.Id == id)
+                    .Where(x => x.CustomerId == id)
                     .ToList();
 
         }
