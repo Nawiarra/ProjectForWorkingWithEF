@@ -12,6 +12,6 @@ namespace WoodWorkshop.Data.Interfaces
         WoodFurnitureOrder Create(WoodFurnitureOrder model);
         List<WoodFurnitureOrder> GetAll();
         WoodFurnitureOrder GetItemById(int id);
-        IEnumerable<IGrouping<string, WoodFurnitureOrder>> GetItemsByCustomerAndGroupByDate(Customer item);
+        List< WoodFurnitureOrder> GetItemsByCustomer(Customer item);
     }
 }

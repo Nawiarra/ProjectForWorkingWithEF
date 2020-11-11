@@ -46,7 +46,7 @@ namespace WoodWorkshop.Domain
 
             if (customer != null)
             {
-                var ListsOfEqualsUserFurniture = _woodWorkshopRepository.GetItemsByCustomerAndGroupByDate(customer);
+                var ListsOfEqualsUserFurniture = _woodWorkshopRepository.GetItemsByCustomer(customer).GroupBy(x=>x.Date);
 
                 foreach (var list in ListsOfEqualsUserFurniture)
                 {

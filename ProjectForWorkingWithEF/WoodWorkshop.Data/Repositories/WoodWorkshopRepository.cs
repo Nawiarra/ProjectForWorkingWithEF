@@ -38,11 +38,11 @@ namespace WoodWorkshop.Data.Repositories
             return _ctx.WoodFurnitureOrders.FirstOrDefault(x => x.Id == id);
         }
 
-        public IEnumerable<IGrouping<string,WoodFurnitureOrder>> GetItemsByCustomerAndGroupByDate(Customer item)
+        public List<WoodFurnitureOrder> GetItemsByCustomer(Customer item)
         {
             return _ctx.WoodFurnitureOrders
                 .Where(x => x.Customer == item)
-                .GroupBy(y => y.Date);
+                .ToList();
         }
 
         public WoodFurnitureOrder UpdateItem(WoodFurnitureOrder model)
