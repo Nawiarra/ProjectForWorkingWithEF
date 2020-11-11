@@ -14,38 +14,13 @@ namespace WoodWorkshop.Data.Repositories
         {
             _ctx = context;
         }
-        public WoodType Create(WoodType model)
+
+        public List<WoodType> FindItemsByName(string name)
         {
-            _ctx.WoodTypes.Add(model);
-
-            _ctx.SaveChanges();
-
-            return model;
+            return _ctx.WoodTypes
+                .Where(x => x.TypeName.Contains(name))
+                .ToList();
         }
-
-        public WoodType GetItemById(int id)
-        {
-            return _ctx.WoodTypes.FirstOrDefault(x => x.Id == id);
-        }
-
-        public bool DeleteItem(WoodType model)
-        {
-            try
-            {
-                var entity = GetItemById(model.Id);
-
-                _ctx.WoodTypes.Remove(entity);
-
-                _ctx.SaveChanges();
-            }
-            catch
-            {
-                return false;
-            }
-
-            return true;
-        }
-
 
 
     }

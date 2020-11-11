@@ -45,7 +45,6 @@ namespace WoodWorkshop.Data.Repositories
                 .GroupBy(y => y.Date);
         }
 
-
         public WoodFurnitureOrder UpdateItem(WoodFurnitureOrder model)
         {
             var entity = GetItemById(model.Id);

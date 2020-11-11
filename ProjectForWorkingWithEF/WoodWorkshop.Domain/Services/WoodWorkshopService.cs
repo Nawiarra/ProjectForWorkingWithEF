@@ -9,6 +9,7 @@ using WoodWorkshop.Data.Models;
 using WoodWorkshop.Data.Repositories;
 using WoodWorkshop.Domain.Models;
 using WoodWorkshop.Data.Interfaces;
+using WoodWorkshop.Data;
 
 namespace WoodWorkshop.Domain
 {
@@ -16,13 +17,16 @@ namespace WoodWorkshop.Domain
     {
         private readonly IWoodWorkshopRepository _woodWorkshopRepository;
         private readonly CustomerRepository _customerRepository;
+        private readonly WoodTypeRepository _woodTypeRepository;
+        private readonly FurnitureTypeRepository _furnitureTypeRepository;
         private readonly IMapper _mapper;
 
         public WoodWorkshopService()
         {
             _woodWorkshopRepository = new WoodWorkshopRepository();
             _customerRepository = new CustomerRepository();
-
+            _woodTypeRepository = new WoodTypeRepository(new WoodWorkshopContext());
+            _furnitureTypeRepository = new FurnitureTypeRepository(new WoodWorkshopContext());
 
             var mapperConfig = new MapperConfiguration(cfg =>
             {
@@ -48,6 +52,34 @@ namespace WoodWorkshop.Domain
                 {
                     if (list.Count() > 5)
                         throw new System.Exception("Users can't buy more than 5 item's in the same day ");
+                }
+            }
+
+            var ListOfNonAccessibleWoodType = _woodTypeRepository.FindItemsByName("non-accessible");
+
+            if (ListOfNonAccessibleWoodType != null)
+            {
+
+                foreach (var item in ListOfNonAccessibleWoodType)
+                {
+                    if (model.WoodTypeId == item.Id)
+                    {
+                        throw new System.Exception("This type of wood is non-accessible for now");
+                    }
+                }
+            }
+
+            var ListOfNonAccessibleFurnitureType = _furnitureTypeRepository.FindItemsByName("non-accessible");
+
+            if (ListOfNonAccessibleFurnitureType != null)
+            {
+
+                foreach (var item in ListOfNonAccessibleFurnitureType)
+                {
+                    if (model.FurnitureTypeId == item.Id)
+                    {
+                        throw new System.Exception("This type of furniture is non-accessible for now");
+                    }
                 }
             }
 
