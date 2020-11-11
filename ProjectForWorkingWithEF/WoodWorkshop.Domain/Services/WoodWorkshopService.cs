@@ -55,7 +55,7 @@ namespace WoodWorkshop.Domain
                 }
             }
 
-            var ListOfNonAccessibleWoodType = _woodTypeRepository.FindItemsByName("non-accessible");
+            var ListOfNonAccessibleWoodType = _woodTypeRepository.GetByName("non-accessible");
 
             if (ListOfNonAccessibleWoodType != null)
             {
@@ -69,7 +69,7 @@ namespace WoodWorkshop.Domain
                 }
             }
 
-            var ListOfNonAccessibleFurnitureType = _furnitureTypeRepository.FindItemsByName("non-accessible");
+            var ListOfNonAccessibleFurnitureType = _furnitureTypeRepository.GetByName("non-accessible");
 
             if (ListOfNonAccessibleFurnitureType != null)
             {

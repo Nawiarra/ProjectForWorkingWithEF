@@ -14,8 +14,16 @@ namespace WoodWorkshop.Data.Repositories
         {
             _ctx = context;
         }
+        public WoodType Create(WoodType model)
+        {
+            _ctx.WoodTypes.Add(model);
 
-        public List<WoodType> FindItemsByName(string name)
+            _ctx.SaveChanges();
+
+            return model;
+        }
+
+        public List<WoodType> GetByName(string name)
         {
             return _ctx.WoodTypes
                 .Where(x => x.TypeName.Contains(name))

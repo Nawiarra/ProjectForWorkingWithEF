@@ -14,7 +14,16 @@ namespace WoodWorkshop.Data.Repositories
         {
             _ctx = context;
         }
-        public List<FurnitureType> FindItemsByName(string name)
+        public FurnitureType Create(FurnitureType model)
+        {
+            _ctx.FurnitureTypes.Add(model);
+
+            _ctx.SaveChanges();
+
+            return model;
+        }
+
+        public List<FurnitureType> GetByName(string name)
         {
             return _ctx.FurnitureTypes
                 .Where(x => x.Name.Contains(name))

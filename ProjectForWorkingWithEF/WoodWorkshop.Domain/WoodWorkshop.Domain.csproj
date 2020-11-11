@@ -53,6 +53,9 @@
     <Compile Include="Models\WoodFurnitureOrderModel.cs" />
     <Compile Include="Models\FurnitureTypeModel.cs" />
     <Compile Include="Models\WoodTypeModel.cs" />
+    <Compile Include="Services\CustomerService.cs" />
+    <Compile Include="Services\FurnitureTypeService.cs" />
+    <Compile Include="Services\WoodTypeService.cs" />
     <Compile Include="Services\WoodWorkshopService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

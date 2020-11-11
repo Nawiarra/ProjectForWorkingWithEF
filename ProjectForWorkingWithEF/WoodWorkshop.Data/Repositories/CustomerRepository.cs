@@ -15,6 +15,15 @@ namespace WoodWorkshop.Data.Repositories
             _ctx = new WoodWorkshopContext();
         }
 
+        public Customer Create(Customer model)
+        {
+            _ctx.Customers.Add(model);
+
+            _ctx.SaveChanges();
+
+            return model;
+        }
+
         public Customer GetById(int customerId)
         {
 
@@ -22,5 +31,12 @@ namespace WoodWorkshop.Data.Repositories
                 .FirstOrDefault(x => x.Id == customerId);
                 
         }
+        public List<Customer> GetByName(string name)
+        {
+            return _ctx.Customers
+                .Where(x => x.FullName == name)
+                .ToList();
+        }
+
     }
 }
