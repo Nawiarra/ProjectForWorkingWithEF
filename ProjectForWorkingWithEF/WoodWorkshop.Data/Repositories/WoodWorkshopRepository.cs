@@ -38,10 +38,10 @@ namespace WoodWorkshop.Data.Repositories
             return _ctx.WoodFurnitureOrders.FirstOrDefault(x => x.Id == id);
         }
 
-        public List<WoodFurnitureOrder> GetItemsByCustomer(Customer item)
+        List<WoodFurnitureOrder> GetAllById(int id)
         {
             return _ctx.WoodFurnitureOrders
-                .Where(x => x.Customer == item)
+                .Where(x => x.Id == id)
                 .ToList();
         }
 

@@ -42,13 +42,13 @@ namespace WoodWorkshop.Domain
         public void CreateFurnitureRequest(WoodFurnitureOrderModel model)
         {
 
-            var customer = _customerRepository.GetById(model.CustomerId);
+            var ListsOfEqualsUserFurniture = _woodWorkshopRepository.GetAllById(model.CustomerId);
 
-            if (customer != null)
+            if (ListsOfEqualsUserFurniture != null)
             {
-                var ListsOfEqualsUserFurniture = _woodWorkshopRepository.GetItemsByCustomer(customer).GroupBy(x=>x.Date);
+               var ListsOfEqualsUserFurnitureGrouppingByDate = ListsOfEqualsUserFurniture.GroupBy(x=>x.Date);
 
-                foreach (var list in ListsOfEqualsUserFurniture)
+                foreach (var list in ListsOfEqualsUserFurnitureGrouppingByDate)
                 {
                     if (list.Count() > 5)
                         throw new System.Exception("Users can't buy more than 5 item's in the same day ");
