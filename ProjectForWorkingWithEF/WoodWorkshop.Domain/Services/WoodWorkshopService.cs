@@ -40,7 +40,7 @@ namespace WoodWorkshop.Domain
         public void CreateFurnitureRequest(WoodFurnitureOrderModel model)
         {
 
-            var ListsOfEqualsUserFurniture = _woodWorkshopRepository.GetAllById(model.CustomerId);
+            var ListsOfEqualsUserFurniture = _woodWorkshopRepository.GetAllByCustomerId(model.CustomerId);
 
             if (ListsOfEqualsUserFurniture != null)
             {

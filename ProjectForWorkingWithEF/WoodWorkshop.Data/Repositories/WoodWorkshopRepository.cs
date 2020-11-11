@@ -75,7 +75,7 @@ namespace WoodWorkshop.Data.Repositories
             return true;
         }
 
-        public List<WoodFurnitureOrder> GetAllById(int id)
+        public List<WoodFurnitureOrder> GetAllByCustomerId(int id)
         {
                 return _ctx.WoodFurnitureOrders
                     .Where(x => x.Id == id)
