@@ -16,7 +16,6 @@ namespace WoodWorkshop.Domain
     public class WoodWorkshopService
     {
         private readonly IWoodWorkshopRepository _woodWorkshopRepository;
-        private readonly CustomerRepository _customerRepository;
         private readonly WoodTypeRepository _woodTypeRepository;
         private readonly FurnitureTypeRepository _furnitureTypeRepository;
         private readonly IMapper _mapper;
@@ -24,7 +23,6 @@ namespace WoodWorkshop.Domain
         public WoodWorkshopService()
         {
             _woodWorkshopRepository = new WoodWorkshopRepository();
-            _customerRepository = new CustomerRepository();
             _woodTypeRepository = new WoodTypeRepository(new WoodWorkshopContext());
             _furnitureTypeRepository = new FurnitureTypeRepository(new WoodWorkshopContext());
 
@@ -91,8 +89,6 @@ namespace WoodWorkshop.Domain
 
         public WoodFurnitureOrderModel GetById(int id)
         {
-            var customers = _customerRepository.GetById(id);
-     
 
             var woodFurniture = _woodWorkshopRepository.GetById(id);
 
